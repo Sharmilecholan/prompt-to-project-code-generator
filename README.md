@@ -138,24 +138,19 @@ python main.py
 Enter your project prompt when asked:
 
 ```text
-Enter your project prompt: Create a simple calculator web application
+Enter your project prompt: Create a simple calculator web application using html, css and javascript
 ```
 
 Generated files will appear inside the `generated_project/` directory.
 
 ---
 
-## 📌 Example Prompt
+## 📌 Example Prompts
 
 ```
-Build a REST API for managing tasks with user authentication and PostgreSQL
-```
-
-AutoDev will:
-
-* Plan the application structure
-* Break it into backend modules
-* Generate code files automatically
+Create a to-do list application using html, css, and javascript.
+Create a simple calculator web application.
+Create a simple blog API in FastAPI with a SQLite database```
 
 ---
 
