@@ -1,0 +1,120 @@
+/*
+  Calculator UI Styling
+  Implements responsive design with CSS variables, grid layout, and button styles.
+*/
+
+:root {
+  /* Color palette */
+  --color-bg: #f9f9f9;
+  --color-primary: #4a90e2;   /* Default button */
+  --color-operator: #ff9500; /* Operator buttons */
+  --color-action: #ff3b30;   /* Clear / Equals */
+  --color-text: #333333;
+  --color-display-bg: #ffffff;
+
+  /* Typography */
+  --font-size: 1.2rem;
+  --font-size-display: 2rem;
+
+  /* Spacing & layout */
+  --spacing: 0.5rem;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------
+   Calculator container
+   -------------------------------------------------- */
+.calculator {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: var(--spacing);
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* --------------------------------------------------
+   Display input
+   -------------------------------------------------- */
+#display {
+  width: 100%;
+  font-size: var(--font-size-display);
+  text-align: right;
+  padding: var(--spacing);
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--color-display-bg);
+  color: var(--color-text);
+  cursor: default; /* disabled‑cursor */
+}
+
+/* --------------------------------------------------
+   Buttons grid
+   -------------------------------------------------- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+
+/* --------------------------------------------------
+   Individual button styling
+   -------------------------------------------------- */
+.calc-btn {
+  width: 100%;
+  height: 60px;
+  font-size: var(--font-size);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.calc-btn:hover,
+.calc-btn:focus {
+  background: #357ab8; /* slightly darker primary */
+  outline: none;
+  transform: translateY(1px);
+}
+
+/* Operator buttons – use attribute selector for existing markup */
+.calc-btn[data-value="/"],
+.calc-btn[data-value="*"] ,
+.calc-btn[data-value="-"] ,
+.calc-btn[data-value="+"] {
+  background: var(--color-operator);
+}
+
+/* Clear and Equals buttons – distinct action style */
+#btn-clear,
+#btn-equals {
+  background: var(--color-action);
+}
+
+/* Optional class‑based styling (if classes are added later) */
+.operator {
+  background: var(--color-operator) !important;
+}
+
+.action {
+  background: var(--color-action) !important;
+}
+
+/* --------------------------------------------------
+   Responsive adjustments
+   -------------------------------------------------- */
+@media (max-width: 600px) {
+  .calculator {
+    max-width: 100%;
+    margin: 1rem;
+  }
+
+  .calc-btn {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+}
